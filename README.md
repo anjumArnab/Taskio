@@ -8,17 +8,10 @@ This is a simple To-Do List app built using Flutter and SQLite. It allows users 
 - Display notes with priority and completion status
 - View the count of completed and total notes
 
-## Technologies Used
-- **Flutter**: Cross-platform mobile app development
-- **Hive**: Local database for storing notes
-- **intl**: Used for date formatting
+## Screenshots
 
-### Prerequisites
-- Flutter SDK installed on your machine
-- Android Studio or Visual Studio Code for development
 
-### Steps to Run the App:
+![Home](assets/t01.png)
+![Task Details](assets/t02.png)
+![Calendar View](assets/t01.png)
 
-1. Clone this repository to your local machine:
-   ```bash
-   git clone https://github.com/anjumArnab/to-do-list-app.git
