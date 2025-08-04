@@ -1,6 +1,6 @@
-import 'package:dbapp/models/hive/subtask.dart';
-import 'package:dbapp/models/hive/task.dart';
-import 'package:dbapp/screens/home_screen.dart';
+import '../models/hive/subtask.dart';
+import '../models/hive/task.dart';
+import '../screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hive_flutter/hive_flutter.dart';

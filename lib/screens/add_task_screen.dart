@@ -1,10 +1,10 @@
-import 'package:dbapp/models/hive/subtask.dart';
-import 'package:dbapp/models/hive/task.dart';
-import 'package:dbapp/services/hive_db.dart';
-import 'package:dbapp/widgets/button.dart';
-import 'package:dbapp/widgets/custom_text_field.dart';
-import 'package:dbapp/widgets/priority_button.dart';
-import 'package:dbapp/widgets/switch.dart';
+import '../models/hive/subtask.dart';
+import '../models/hive/task.dart';
+import '../services/hive_db.dart';
+import '../widgets/button.dart';
+import '../widgets/custom_text_field.dart';
+import '../widgets/priority_button.dart';
+import '../widgets/switch.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -99,7 +99,7 @@ class _AddTaskScreenState extends State<AddTaskScreen> {
       priority: _priority,
       subTasks: subTasks,
     );
-    
+
     // Save the task with its embedded subtasks using the TaskService
     final taskService = TaskService();
     await taskService.addTask(newTask);

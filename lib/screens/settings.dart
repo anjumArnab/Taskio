@@ -1,6 +1,6 @@
-import 'package:dbapp/widgets/switch.dart';
 import 'package:flutter/material.dart';
-import 'package:dbapp/services/backup_service.dart';
+import '../widgets/switch.dart';
+import '../services/backup_service.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -26,10 +26,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Future<void> _loadBackupSettings() async {
     // Initialize backup service
     await _backupService.initialize();
-    
+
     // Get backup status
     final isEnabled = await _backupService.isBackupEnabled();
-    
+
     // Get next backup time if backup is enabled
     if (isEnabled) {
       final formattedTime = await _backupService.getFormattedNextBackupTime();
@@ -107,7 +107,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
 
             const SizedBox(height: 32),
-            
+
             // Cloud Backup Section with next backup info
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -118,13 +118,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   onChanged: (val) async {
                     // Toggle backup service
                     await _backupService.toggleBackup(val);
-                    
+
                     // Get next backup time if enabled
                     String formattedTime = 'Not scheduled';
                     if (val) {
-                      formattedTime = await _backupService.getFormattedNextBackupTime();
+                      formattedTime =
+                          await _backupService.getFormattedNextBackupTime();
                     }
-                    
+
                     setState(() {
                       cloudBackupEnabled = val;
                       nextBackupTime = formattedTime;
@@ -133,7 +134,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
                 if (cloudBackupEnabled)
                   Padding(
-                    padding: const EdgeInsets.only(left: 16.0, top: 4.0, bottom: 8.0),
+                    padding: const EdgeInsets.only(
+                        left: 16.0, top: 4.0, bottom: 8.0),
                     child: Text(
                       'Next backup: $nextBackupTime',
                       style: TextStyle(
@@ -144,9 +146,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ),
               ],
             ),
-            
+
             const Divider(height: 1),
-            
+
             SettingSwitch(
               title: 'Notifications',
               value: notificationsEnabled,

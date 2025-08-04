@@ -1,6 +1,6 @@
-import 'package:dbapp/screens/home_screen.dart';
-import 'package:dbapp/screens/sign_up_screen.dart';
-import 'package:dbapp/widgets/button.dart';
+import '../screens/home_screen.dart';
+import '../screens/sign_up_screen.dart';
+import '../widgets/button.dart';
 import 'package:flutter/material.dart';
 
 class SignInScreen extends StatefulWidget {

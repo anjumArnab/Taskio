@@ -1,9 +1,9 @@
-import 'package:dbapp/models/hive/task.dart';
-import 'package:dbapp/screens/add_task_screen.dart';
-import 'package:dbapp/screens/task_details_screen.dart';
-import 'package:dbapp/services/hive_db.dart';
-import 'package:dbapp/widgets/snack_bar.dart';
-import 'package:dbapp/widgets/task_tile.dart';
+import '../models/hive/task.dart';
+import '../screens/add_task_screen.dart';
+import '../screens/task_details_screen.dart';
+import '../services/hive_db.dart';
+import '../widgets/snack_bar.dart';
+import '../widgets/task_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/intl.dart';
@@ -47,17 +47,17 @@ class _CalendarScreenState extends State<CalendarScreen> {
 
       // Create list of tasks with their keys
       List<Map<String, dynamic>> taskData = [];
-      
+
       // We'll enumerate tasks and use the index as the key
       // This assumes tasks are stored with sequential keys starting from 0
       for (int i = 0; i < tasks.length; i++) {
         final task = tasks[i];
-        
+
         // Only add tasks that have due dates
         if (task.dueDate.isNotEmpty) {
           taskData.add({
             'task': task,
-            'key': i,  // Use index as key
+            'key': i, // Use index as key
           });
         }
       }

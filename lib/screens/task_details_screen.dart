@@ -1,8 +1,8 @@
-import 'package:dbapp/models/hive/subtask.dart';
-import 'package:dbapp/models/hive/task.dart';
-import 'package:dbapp/services/hive_db.dart';
-import 'package:dbapp/widgets/button.dart';
-import 'package:dbapp/widgets/subtask_item.dart';
+import '../models/hive/subtask.dart';
+import '../models/hive/task.dart';
+import '../services/hive_db.dart';
+import '../widgets/button.dart';
+import '../widgets/subtask_item.dart';
 import 'package:flutter/material.dart';
 
 class TaskDetailsScreen extends StatefulWidget {

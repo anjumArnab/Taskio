@@ -1,10 +1,10 @@
-import 'package:dbapp/models/hive/subtask.dart';
-import 'package:dbapp/models/hive/task.dart';
-import 'package:dbapp/screens/add_task_screen.dart';
-import 'package:dbapp/screens/task_details_screen.dart';
-import 'package:dbapp/services/hive_db.dart';
-import 'package:dbapp/widgets/app_drawer.dart';
-import 'package:dbapp/widgets/task_tile.dart';
+import '../models/hive/subtask.dart';
+import '../models/hive/task.dart';
+import '../screens/add_task_screen.dart';
+import '../screens/task_details_screen.dart';
+import '../services/hive_db.dart';
+import '../widgets/app_drawer.dart';
+import '../widgets/task_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
@@ -66,15 +66,15 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
     }
   }
 
-
-  void _navToTaskDetailsScreen(BuildContext context, Task task, int taskKey) async {
+  void _navToTaskDetailsScreen(
+      BuildContext context, Task task, int taskKey) async {
     final result = await Navigator.push(
       context,
       MaterialPageRoute(
         builder: (context) => TaskDetailsScreen(task: task, taskKey: taskKey),
       ),
     );
-    
+
     // Refresh the task list when returning from details screen
     if (result == true || result == null) {
       _loadTasks();
@@ -169,7 +169,6 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
               icon: const Icon(Icons.add),
               onPressed: () => _navToAddTask(context)),
           const SizedBox(width: 10),
-          
         ],
         bottom: TabBar(
           labelColor: Colors.white,
@@ -251,13 +250,12 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             i; // This assumes tasks are in order of keys, which may not be accurate
 
         return TaskTile(
-            title: task.title,
-            subtitle: getSubtitleText(task),
-            completed: isTaskCompleted(task),
-            onTap: () => _toggleTaskCompletion(task, taskKey),
-            onDoubleTap:
-                () => _navToTaskDetailsScreen(context, task, taskKey),
-            );
+          title: task.title,
+          subtitle: getSubtitleText(task),
+          completed: isTaskCompleted(task),
+          onTap: () => _toggleTaskCompletion(task, taskKey),
+          onDoubleTap: () => _navToTaskDetailsScreen(context, task, taskKey),
+        );
       },
     );
   }
