@@ -188,7 +188,11 @@ class _CalendarScreenState extends State<CalendarScreen> {
         backgroundColor: Colors.deepPurple,
         title: const Text(
           'Calendar',
-          style: TextStyle(color: Colors.white),
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
         ),
         actions: [
           IconButton(

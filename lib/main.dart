@@ -14,11 +14,11 @@ void main() async {
   Hive.registerAdapter(SubTaskAdapter());
 
   // Now we can run the app
-  runApp(const ToDo());
+  runApp(const Taskio());
 }
 
-class ToDo extends StatelessWidget {
-  const ToDo({super.key});
+class Taskio extends StatelessWidget {
+  const Taskio({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +26,7 @@ class ToDo extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Taskio',
       theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
         textTheme: GoogleFonts.poppinsTextTheme(),
       ),
       home: const HomeScreen(),
