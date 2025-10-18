@@ -8,8 +8,6 @@ This is a simple To-Do List app built using Flutter and SQLite. It allows users 
 - Display notes with priority and completion status
 - View the count of completed and total notes
 
-## Screenshots
-![Home](assets/t01.png)
-![Task Details](assets/t02.png)
-![Calendar View](assets/t03.png)
+## Preview
+![Taskio](assets/taskio.gif)
 
