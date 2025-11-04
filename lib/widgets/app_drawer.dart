@@ -1,10 +1,10 @@
-import 'package:dbapp/screens/settings.dart';
-import 'package:dbapp/screens/sign_in_screen.dart';
-import 'package:dbapp/screens/sign_up_screen.dart';
-import 'package:dbapp/widgets/snack_bar.dart';
+import '../screens/settings.dart';
+import '../screens/sign_in_screen.dart';
+import '../screens/sign_up_screen.dart';
+import '../widgets/snack_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:dbapp/screens/add_task_screen.dart';
-import 'package:dbapp/screens/calendar_view_screen.dart';
+import '../screens/add_task_screen.dart';
+import '../screens/calendar_view_screen.dart';
 
 class AppDrawer extends StatefulWidget {
   final Function refreshTasks;

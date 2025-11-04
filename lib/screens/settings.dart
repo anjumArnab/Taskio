@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../widgets/switch.dart';
-import '../services/backup_service.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -15,34 +14,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
   bool darkThemeEnabled = false;
   bool defaultRemindersEnabled = false;
   String nextBackupTime = 'Not scheduled';
-  final BackupService _backupService = BackupService();
 
   @override
   void initState() {
     super.initState();
-    _loadBackupSettings();
   }
 
-  Future<void> _loadBackupSettings() async {
-    // Initialize backup service
-    await _backupService.initialize();
-
-    // Get backup status
-    final isEnabled = await _backupService.isBackupEnabled();
-
-    // Get next backup time if backup is enabled
-    if (isEnabled) {
-      final formattedTime = await _backupService.getFormattedNextBackupTime();
-      setState(() {
-        cloudBackupEnabled = isEnabled;
-        nextBackupTime = formattedTime;
-      });
-    } else {
-      setState(() {
-        cloudBackupEnabled = false;
-      });
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -121,21 +98,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 SettingSwitch(
                   title: 'Backup to cloud',
                   value: cloudBackupEnabled,
-                  onChanged: (val) async {
-                    // Toggle backup service
-                    await _backupService.toggleBackup(val);
+                  onChanged: (_){
 
-                    // Get next backup time if enabled
-                    String formattedTime = 'Not scheduled';
-                    if (val) {
-                      formattedTime =
-                          await _backupService.getFormattedNextBackupTime();
-                    }
-
-                    setState(() {
-                      cloudBackupEnabled = val;
-                      nextBackupTime = formattedTime;
-                    });
                   },
                 ),
                 if (cloudBackupEnabled)

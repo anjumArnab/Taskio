@@ -1,5 +1,5 @@
-import 'package:dbapp/models/hive/subtask.dart';
-import 'package:dbapp/models/hive/task.dart';
+import '../models/hive/subtask.dart';
+import '../models/hive/task.dart';
 import 'package:hive/hive.dart';
 
 /// Service class to handle all CRUD operations for Task model
