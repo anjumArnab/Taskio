@@ -250,10 +250,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
       itemCount: tasks.length,
       itemBuilder: (context, i) {
         final task = tasks[i];
-        // Get the actual Hive box key for this task
-        // In a real app you might need to store and track keys differently
-        final taskKey =
-            i; // This assumes tasks are in order of keys, which may not be accurate
+
+        final taskKey = i;
 
         return TaskTile(
           title: task.title,
