@@ -1,6 +1,6 @@
 # Taskio
 
-This is a simple To-Do List app built using Flutter and SQLite. It allows users to create, update, and mark notes as completed. The app uses `hive` for local database storage and provides an interactive user interface.
+This is a simple To-Do List app built using Flutter and SQLite. It allows users to create, update, and mark notes as completed. The app uses `Hive` and `SQFLite` for local database storage and provides an interactive user interface.
 
 ## Features
 - Add new notes
